@@ -27,6 +27,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+AUTH_USER_MODEL = 'account.CustomUSer'
+
 
 # Application definition
 
@@ -38,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'blog',
+    'account',
 ]
 
 MIDDLEWARE = [
@@ -127,3 +130,9 @@ STATICFILES_DIRS = [
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 #static 파일들을 어디에 모을건지
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+#이용자가 업로드한 파일을 모으는 곳
+
+MEDIA_URL = '/media/'
+#이용자에게 사진을 보여줄 때의 url을 설정
